@@ -118,4 +118,20 @@ public class Customer {
     public void setAddressLine3(String addressLine3) {
         this.addressLine3 = addressLine3;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", otherNames='" + otherNames + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", addressLine1='" + addressLine1 + '\'' +
+                ", addressLine2='" + addressLine2 + '\'' +
+                ", addressLine3='" + addressLine3 + '\'' +
+                ", policyList=" + policyList +
+                '}';
+    }
 }

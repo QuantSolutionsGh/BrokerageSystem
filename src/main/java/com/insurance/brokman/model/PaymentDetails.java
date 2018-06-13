@@ -18,8 +18,20 @@ public class PaymentDetails {
 
     private long amtPaid;
 
+    private Date entryDate;
 
-    private Date transactonDate;
+
+    private Date transactionDate;
+
+    private String comments;
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 
     public Long getId() {
         return id;
@@ -29,13 +41,7 @@ public class PaymentDetails {
         this.id = id;
     }
 
-    public Date getTransactonDate() {
-        return transactonDate;
-    }
 
-    public void setTransactonDate(Date transactonDate) {
-        this.transactonDate = transactonDate;
-    }
 
     public long getAmtPaid() {
         return amtPaid;
@@ -51,5 +57,21 @@ public class PaymentDetails {
 
     public void setPolicy(Policy policy) {
         this.policy = policy;
+    }
+
+    public Date getEntryDate() {
+        return entryDate;
+    }
+
+    public void setEntryDate(Date entryDate) {
+        this.entryDate = entryDate;
+    }
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
     }
 }

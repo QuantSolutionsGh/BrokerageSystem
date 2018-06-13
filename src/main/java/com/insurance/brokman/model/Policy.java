@@ -29,6 +29,18 @@ public class Policy {
 
     private long premium;
 
+    private long amtPaid;
+
+
+    @ManyToOne
+    @JoinColumn(name="agentId")
+    private SalesAgent salesAgent;
+
+
+    @ManyToOne
+    @JoinColumn(name="insurerId")
+    private Insurer insurer;
+
     @ManyToOne
     @JoinColumn(name="customerId")
     private Customer customer;
@@ -42,7 +54,13 @@ public class Policy {
         this.getPaymentDetailsList().add(paymentDetails);
     }
 
+    public SalesAgent getSalesAgent() {
+        return salesAgent;
+    }
 
+    public void setSalesAgent(SalesAgent salesAgent) {
+        this.salesAgent = salesAgent;
+    }
 
     public Long getId() {
         return id;
@@ -114,5 +132,22 @@ public class Policy {
 
     public void setPaymentDetailsList(List<PaymentDetails> paymentDetailsList) {
         this.paymentDetailsList = paymentDetailsList;
+
+    }
+
+    public long getAmtPaid() {
+        return amtPaid;
+    }
+
+    public void setAmtPaid(long amtPaid) {
+        this.amtPaid = amtPaid;
+    }
+
+    public Insurer getInsurer() {
+        return insurer;
+    }
+
+    public void setInsurer(Insurer insurer) {
+        this.insurer = insurer;
     }
 }
