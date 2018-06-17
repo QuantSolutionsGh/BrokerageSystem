@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/webjars/**","/resources/**","/logo.png", "/static/**", "/css/**", "/js/**", "/images/**").permitAll()
+                .antMatchers("/webjars/**","/resources/**","/logo.png","/login", "/static/**", "/css/**", "/js/**", "/images/**").permitAll()
               //  .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -52,10 +52,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/logout")
-                .permitAll().and().csrf().ignoringAntMatchers("/frameset*")  //without this birt report does not function
+                .csrf().ignoringAntMatchers("/frameset*")  //without this birt report does not function
                 .and().headers();
         http.exceptionHandling().accessDeniedPage("/403");
+        http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).
+                logoutSuccessUrl("/login").deleteCookies("JSESSIONID").invalidateHttpSession(true);
     }
 
 
