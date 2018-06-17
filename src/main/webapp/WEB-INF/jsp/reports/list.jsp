@@ -43,9 +43,9 @@
 
 
     <div class="table-responsive" id="all-events">
-        <table id="jtable"  class="table table-striped table-hover table-sm"
+        <table id="jtable"  class="table  table-hover table-sm"
               >
-            <thead class="thead-dark">
+            <thead style="background-color: #fde89f;">
             <tr>
                 <th >Report ID</th>
                 <th>Report Description</th>

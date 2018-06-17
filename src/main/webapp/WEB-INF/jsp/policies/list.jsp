@@ -43,9 +43,9 @@
 
 
     <div class="table-responsive" id="all-events">
-        <table id="jtable" class="table table-striped table-hover table-sm"
+        <table id="jtable" class="table  table-hover table-sm"
                width="100%">
-            <thead class="thead-dark">
+            <thead style="background-color: #fde89f;">
             <tr>
                 <th width="10%">Policy Number</th>
                 <th width="10%">Policy Type</th>

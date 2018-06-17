@@ -44,9 +44,9 @@
 
 
     <div class="table-responsive" id="all-events">
-        <table id="jtable" class="table table-striped table-hover table-sm"
+        <table id="jtable" class="table  table-hover table-sm"
                width="100%">
-            <thead class="thead-dark">
+            <thead style="background-color: #fde89f;">
             <tr>
                 <th width="20%">Last Name</th>
                 <th width="20%">First Name</th>

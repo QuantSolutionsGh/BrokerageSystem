@@ -127,7 +127,7 @@
         <div class="table-responsive" >
             <table id="jtable" class="table table-striped table-hover table-sm"
                    width="100%">
-                <thead class="thead-dark">
+                <thead style="background-color: #fde89f;">
                 <tr>
                     <th width="20%">Policy Number</th>
                     <th width="20%">Policy Type</th>

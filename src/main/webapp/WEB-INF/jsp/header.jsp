@@ -45,6 +45,9 @@
 
         <spring:url value="/" var="urlHome" />
         <spring:url value="/users/add" var="urlAddUser" />
+        <spring:url value="/logo.png"  var="logo"/>
+
+        <spring:url value="/logout" var="logout" />
 
 
 
@@ -56,8 +59,8 @@
 
 
     </head>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Company Name</a>
+<nav class="navbar navbar-expand-md  navbar navbar-light fixed-top" style="background-color: #fdb30d;">
+    <a href="#" class="navbar-brand navbar-left"><img style="max-width:150px; margin-top: -7px;" src="${logo}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -136,6 +139,9 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <!--form action="${logout}" method="post">
+            <input class="btn btn-danger" type="submit" value="Sign Out" />
+        </form> -->
     </div>
 </nav>
 

@@ -3,6 +3,24 @@ firstName, this translates as first_Name or first_name in our sql script file.
 
 */
 
+create table users (
+    id int identity not null,
+    username varchar(50) not null,
+    password varchar(100) not null,
+
+    enabled int,
+
+    primary key (id)
+);
+
+create table user_roles(
+    id int identity not null,
+    username varchar(50) not null,
+    role varchar(50) not NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT user_userroles_fk FOREIGN KEY (username) REFERENCES users(username)
+
+);
 
 CREATE TABLE Customer (
     id INT IDENTITY not null,
@@ -81,3 +99,12 @@ insert into Sales_Agent(id,agent_Name) values (2, 'TEST 2');
 insert into Insurer(id,company_Name) values (1,'HOLLARD INSURANCE');
 
 insert into Insurer(id, company_Name) values (2,'ENTERPRISE INSURANCE');
+
+insert into Insurer(id,company_name) values(3,'DONEWELL INSURANCE');
+
+insert into Report(id,report_id,report_description) values(1,'test.rptdesign','Test Report');
+
+insert into users (id,username,password,enabled)
+values (1,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1);
+
+insert into user_roles(id,username,role) values(1,'admin','admin');
