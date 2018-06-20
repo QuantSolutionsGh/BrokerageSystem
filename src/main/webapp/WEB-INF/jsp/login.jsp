@@ -75,23 +75,12 @@
                     <br/>
 
                     <br/>
-                   <!--
-                    <c:choose>
-                        <c:when test="${param.error!=''}">
-                            <div class="alert alert-danger">
-                                Invalid username and password.
-                            </div>
-                        </c:when>
 
-                    </c:choose>
-                    <c:choose>
-                        <c:when test="${param.logout!=''}">
-                            <div class="alert alert-info">
-                                You have been logged out.
-                            </div>
-                        </c:when>
 
-                    </c:choose>  -->
+                    <c:if test="${not empty msg}">
+                    <div class="${cssclass}">${msg}</div>
+                    </c:if>
+
 
 
 

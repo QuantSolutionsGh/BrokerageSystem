@@ -6,6 +6,7 @@ firstName, this translates as first_Name or first_name in our sql script file.
 create table users (
     id int identity not null,
     username varchar(50) not null,
+    fullname varchar(100) not null,
     password varchar(100) not null,
 
     enabled int,
@@ -104,7 +105,7 @@ insert into Insurer(id,company_name) values(3,'DONEWELL INSURANCE');
 
 insert into Report(id,report_id,report_description) values(1,'test.rptdesign','Test Report');
 
-insert into users (id,username,password,enabled)
-values (1,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1);
+insert into users (id,username,password,enabled,fullname)
+values (1,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
 
 insert into user_roles(id,username,role) values(1,'admin','admin');

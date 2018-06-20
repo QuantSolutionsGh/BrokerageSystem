@@ -59,6 +59,7 @@
 
 
     </head>
+
 <nav class="navbar navbar-expand-md  navbar navbar-light fixed-top" style="background-color: #fdb30d;">
     <a href="#" class="navbar-brand navbar-left"><img style="max-width:150px; margin-top: -7px;" src="${logo}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,13 +124,15 @@
                 </div>
             </li>
 
+
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown06"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">System Configuration</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="${urlHome}insurers/">System Configuration</a>
-                    <a class="dropdown-item" href="${urlHome}insurers/add">Setup New Insurer</a>
+                    <a class="dropdown-item" href="${urlHome}users/">User List</a>
 
                 </div>
             </li>

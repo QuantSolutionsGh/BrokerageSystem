@@ -14,6 +14,16 @@ public class Users {
 
     private String username;
 
+    private String fullname;
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
     public Long getId() {
         return id;
     }
