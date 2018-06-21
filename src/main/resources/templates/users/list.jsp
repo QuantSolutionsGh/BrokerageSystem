@@ -27,7 +27,7 @@
 
             <h4>&nbsp &nbsp</h4>
             <i class="fa fa-users fa-2x" style="color:goldenrod"></i>
-            <h4>&nbsp Sales Agents</h4>
+            <h4>&nbsp Users</h4>
 
 
 
@@ -36,7 +36,7 @@
     <spring:url value="/" var="urlHome" />
     <div class="row">
         <p>&nbsp &nbsp &nbsp &nbsp</p>
-        <a href="${urlHome}salesagents/add" class="float-md-left" >Add New Agent </a>
+        <a href="${urlHome}users/add" class="float-md-left" >Setup New User </a>
 
     </div>
 
@@ -48,7 +48,9 @@
             <thead style="background-color: #fde89f;">
             <tr>
                 <th >ID</th>
-                <th>Agent</th>
+                <th>Username</th>
+                <th>Fullname</th>
+                <th>Enabled?</th>
                 <th>Action</th>
 
             </tr>
@@ -58,11 +60,14 @@
 
 
 
-            <%--@elvariable id="agentList" type="java.util.List<com.insurance.brokman.model.SalesAgent>"--%>
-            <c:forEach var="salesAgent" items="${agentList}">
+
+            <%--@elvariable id="usersList" type="java.util.List<com.insurance.brokman.model.Users>"--%>
+            <c:forEach var="user" items="${usersList}">
                 <tr>
-                    <td>${salesAgent.id}</td>
-                    <td>${salesAgent.agentName}</td>
+                    <td>${user.id}</td>
+                    <td>${user.username}</td>
+                    <td>${user.fullname}</td>
+                    <td>${user.enabled}</td>
 
 
 

@@ -11,43 +11,72 @@
 
 
     <div class="container-fluid" style="margin-top: 70px">
-        <spring:url value="/insurers" var="insurersUrl" ></spring:url>
+        <spring:url value="/users" var="usersUrl" ></spring:url>
 
 
 
 
                         <c:choose>
-
-                            <%--@elvariable id="insurerForm" type="com.insurance.brokman.model.Insurer"--%>
-                            <c:when test="${insurerForm.id==null}">
-                                <h3>New Insurer</h3>
+                            
+                        
+                            <%--@elvariable id="userForm" type="com.insurance.brokman.model.Users"--%>
+                            <c:when test="${userForm.id==null}">
+                                <h3>New User Setup</h3>
                             </c:when>
                             <c:otherwise>
-                                <h3>Update Insurer </h3>
+                                <h3>Update User Details </h3>
 
                                 <br/>
                             </c:otherwise>
                         </c:choose>
                         <br />
                    
-                    <%--@elvariable id="insurerForm" type="com.insurance.brokman.model.Insurer"--%>
-                    <form:form method="post" accept-charset="utf-8" class="col s12" modelAttribute="insurerForm"
-                               action="${insurersUrl}">
+                    <%--@elvariable id="userForm" type="com.insurance.brokman.model.Users"--%>
+                    <form:form method="post" accept-charset="utf-8" class="col s12" modelAttribute="userForm"
+                               action="${usersUrl}">
                         <form:hidden path="id" />
 
 
                         <div class="form-row">
                             <div class="form-group col-md-4">
 
-                                <spring:bind path="companyName">
-                                <label for="companyName">Company Name</label>
-                                <input type="text" class="form-control" name="companyName" required="required"
-                                       id="companyName"
+                                <spring:bind path="username">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" name="username" required="required"
+                                       id="username"
                                        value="${status.value}" />
                                 </spring:bind>
                             </div>
 
                         </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+
+                    <spring:bind path="fullname">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" class="form-control" name="fullname" required="required"
+                               id="fullname"
+                               value="${status.value}" />
+                    </spring:bind>
+                </div>
+
+            </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+
+                <spring:bind path="password">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" required="required"
+                           id="password"
+                           value="${status.value}" />
+                </spring:bind>
+            </div>
+
+        </div>
+
+
 
                         <button type="submit" class="btn btn-success">Save</button>
             <button type="submit" class="btn btn-primary">Cancel </button>
@@ -59,7 +88,15 @@
 
         <br/>
         <br/>
+        <div class="collapse" id="collapseExample">
+        <h3>Policy Details</h3>
 
+
+
+
+
+
+                </tbody>
 
                 </form:form>
 

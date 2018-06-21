@@ -81,19 +81,7 @@
 			<scope>test</scope>
 		</dependency>  -->
 
-		<!-- https://mvnrepository.com/artifact/org.webjars/datatables -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>datatables</artifactId>
-			<version>1.10.15</version>
-		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>4.0.0</version>
-		</dependency>
 
 
 		<dependency>
@@ -102,12 +90,7 @@
 			<version>1.9.1</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.webjars.bower/datatables-responsive -->
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>datatables-responsive</artifactId>
-			<version>1.0.6</version>
-		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.webjars/font-awesome -->
 		<dependency>
@@ -116,25 +99,27 @@
 			<version>4.7.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.webjars.bower/tempusdominus-bootstrap-4 -->
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>tempusdominus-bootstrap-4</artifactId>
-			<version>5.0.0-alpha.16</version>
-		</dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.webjars/momentjs -->
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>momentjs</artifactId>
-            <version>2.22.1</version>
-        </dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/org.eclipse.birt.runtime/org.eclipse.birt.runtime -->
 		<dependency>
 			<groupId>org.eclipse.birt.runtime</groupId>
 			<artifactId>org.eclipse.birt.runtime</artifactId>
 			<version>4.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.webjars/materializecss -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>materializecss</artifactId>
+			<version>0.100.1</version>
 		</dependency>
 
 
@@ -162,37 +147,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<!-- JSTL -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-
-		</dependency>
-		<!-- To compile JSP files -->
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-
-		</dependency>
 	</dependencies>
 
 	<build>
