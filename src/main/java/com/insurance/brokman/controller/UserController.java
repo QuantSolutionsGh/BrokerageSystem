@@ -89,6 +89,7 @@ public class UserController {
                 user.setEnabled(1);
 
                 UserRoles userRoles = new UserRoles();
+
                 userRoles.setRole("admin");
                 user.addToUserRoles(userRoles);
 

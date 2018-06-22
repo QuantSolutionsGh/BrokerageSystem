@@ -1,11 +1,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 
 
 
 
 
-    <head>
+<head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <spring:url value="/webjars/bootstrap/4.0.0/css/bootstrap.css" var="bootstrapCss" />
@@ -58,7 +59,12 @@
 
 
 
+
+
+
+
     </head>
+
 
 <nav class="navbar navbar-expand-md  navbar navbar-light fixed-top" style="background-color: #fdb30d;">
     <a href="#" class="navbar-brand navbar-left"><img style="max-width:150px; margin-top: -7px;" src="${logo}"></a>
@@ -146,7 +152,7 @@
             <input type="hidden"
                    name="${_csrf.parameterName}"
                    value="${_csrf.token}"/>
-            <input class="btn btn-danger" type="submit" value="Sign Out" />
+            <input class="btn btn-danger" type="submit" value="Sign Out - <sec:authentication property="principal.username" />" >
         </form>
     </div>
 </nav>

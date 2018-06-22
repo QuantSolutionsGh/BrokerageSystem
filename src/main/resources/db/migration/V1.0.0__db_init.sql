@@ -16,10 +16,10 @@ create table users (
 
 create table user_roles(
     id serial  not null ,
-    username varchar(50) not null,
+    user_id int not null,
     role varchar(50) not NULL,
     PRIMARY KEY (id),
-    CONSTRAINT user_userroles_fk FOREIGN KEY (username) REFERENCES users(username)
+    CONSTRAINT user_userroles_fk FOREIGN KEY (user_id) REFERENCES users(id)
 
 );
 
@@ -108,4 +108,4 @@ insert into Report(id,report_id,report_description) values(1,'test.rptdesign','T
 insert into users (id,username,password,enabled,fullname)
 values (0,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
 
-insert into user_roles(id,username,role) values(0,'admin','admin');
+insert into user_roles(id,user_id,role) values(0,0,'admin');
