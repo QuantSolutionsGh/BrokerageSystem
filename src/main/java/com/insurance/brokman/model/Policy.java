@@ -31,6 +31,8 @@ public class Policy {
 
     private long amtPaid;
 
+    private String currency;
+
 
     @ManyToOne
     @JoinColumn(name="agentId")
@@ -149,5 +151,13 @@ public class Policy {
 
     public void setInsurer(Insurer insurer) {
         this.insurer = insurer;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }

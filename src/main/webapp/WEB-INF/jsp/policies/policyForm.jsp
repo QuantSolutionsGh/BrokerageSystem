@@ -172,7 +172,18 @@
 
             </div>
 
-            <div class="form-group col-md-4 offset-md-1">
+            <div class="form-group offset-md-1 col-md-2">
+                <label>Currency</label>
+
+                <form:select class="form-control" path="currency">
+                    <form:option value="GHC" label="Ghana Cedis" />
+                    <form:option value="USD" label="US Dollars" />
+                    <form:option value="EURO" label="EUROS" />
+                </form:select>
+
+            </div>
+
+            <div class="form-group col-md-2 ">
                 <spring:bind path="premium">
                     <label for="premium">Premium</label>
                     <input type="number" class="form-control" name="premium" required="required"

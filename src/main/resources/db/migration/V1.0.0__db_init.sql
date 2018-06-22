@@ -61,6 +61,7 @@ CREATE TABLE Policy (
     cover_To_Date DATE NOT NULL,
     insurance_Company VARCHAR(255) ,
     premium numeric,
+    currency varchar(10) not null,
     amt_paid numeric,
     agent_id int,
     PRIMARY KEY (id),
@@ -93,19 +94,19 @@ CREATE TABLE Payment_Details (
 );
 
 
-insert into Sales_Agent(id,agent_Name) values (0, 'TEST 1');
+insert into Sales_Agent(id,agent_Name) values (nextval('sales_agent_id_seq'), 'TEST 1');
 
-insert into Sales_Agent(id,agent_Name) values (2, 'TEST 2');
+insert into Sales_Agent(id,agent_Name) values (nextval('sales_agent_id_seq'), 'TEST 2');
 
-insert into Insurer(id,company_Name) values (1,'HOLLARD INSURANCE');
+insert into Insurer(id,company_Name) values (nextval('insurer_id_seq'),'HOLLARD INSURANCE');
 
-insert into Insurer(id, company_Name) values (2,'ENTERPRISE INSURANCE');
+insert into Insurer(id, company_Name) values (nextval('insurer_id_seq'),'ENTERPRISE INSURANCE');
 
-insert into Insurer(id,company_name) values(3,'DONEWELL INSURANCE');
+insert into Insurer(id,company_name) values(nextval('insurer_id_seq'),'DONEWELL INSURANCE');
 
-insert into Report(id,report_id,report_description) values(1,'test.rptdesign','Test Report');
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'test.rptdesign','Test Report');
 
 insert into users (id,username,password,enabled,fullname)
-values (0,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
+values (nextval('users_id_seq'),'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
 
-insert into user_roles(id,user_id,role) values(0,0,'admin');
+insert into user_roles(id,user_id,role) values(nextval('user_roles_id_seq'),CURRVAL('users_id_seq'),'admin');

@@ -49,6 +49,8 @@ public class BrokmanApplication implements CommandLineRunner {
 
 		policy.setInsuranceCompany("test test");
 
+		policy.setCurrency("GHC");
+
 		Insurer insurer =insurerRepo.getOne(Integer.toUnsignedLong(1));
 		policy.setInsurer(insurer);
 

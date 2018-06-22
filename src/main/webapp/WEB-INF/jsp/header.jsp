@@ -152,7 +152,7 @@
             <input type="hidden"
                    name="${_csrf.parameterName}"
                    value="${_csrf.token}"/>
-            <input class="btn btn-danger" type="submit" value="Sign Out - <sec:authentication property="principal.username" />" >
+            <input class="btn btn-danger" type="submit" value="Sign Out - <sec:authentication  property="principal.username" />" >
         </form>
     </div>
 </nav>
