@@ -60,7 +60,7 @@ public class Users {
 
     private  int enabled;
 
-    @OneToMany(mappedBy="users")
+    @OneToMany(mappedBy="users",cascade = CascadeType.PERSIST)
     private List<UserRoles> rolesList=new ArrayList<>();
 
     public List<UserRoles> getRolesList() {
@@ -69,5 +69,12 @@ public class Users {
 
     public void setRolesList(List<UserRoles> rolesList) {
         this.rolesList = rolesList;
+    }
+
+
+    public void addToUserRoles(UserRoles userRole){
+        userRole.setUsers(this);
+        this.getRolesList().add(userRole);
+
     }
 }

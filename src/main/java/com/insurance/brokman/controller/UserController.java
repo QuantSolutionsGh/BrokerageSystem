@@ -1,7 +1,9 @@
 package com.insurance.brokman.controller;
 
+import com.insurance.brokman.model.UserRoles;
 import com.insurance.brokman.model.Users;
 import com.insurance.brokman.repository.UserRepository;
+import com.insurance.brokman.repository.UserRolesRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +26,10 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private UserRolesRepository userRolesRepository;
+
 
     // show update form
 
@@ -81,7 +85,12 @@ public class UserController {
         }else{
             redirectAttributes.addFlashAttribute("css","success");
             if (user.getId()==null){
-                user.setPassword(this.bCryptPasswordEncoder.encode(user.getPassword()));
+                user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+                user.setEnabled(1);
+
+                UserRoles userRoles = new UserRoles();
+                userRoles.setRole("admin");
+                user.addToUserRoles(userRoles);
 
                 redirectAttributes.addFlashAttribute("msg","New User successfully added");
             }else {

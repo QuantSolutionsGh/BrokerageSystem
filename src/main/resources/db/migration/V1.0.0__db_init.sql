@@ -4,8 +4,8 @@ firstName, this translates as first_Name or first_name in our sql script file.
 */
 
 create table users (
-    id int identity not null,
-    username varchar(50) not null,
+    id serial  not null ,
+    username varchar(50) not null unique,
     fullname varchar(100) not null,
     password varchar(100) not null,
 
@@ -15,7 +15,7 @@ create table users (
 );
 
 create table user_roles(
-    id int identity not null,
+    id serial  not null ,
     username varchar(50) not null,
     role varchar(50) not NULL,
     PRIMARY KEY (id),
@@ -24,7 +24,7 @@ create table user_roles(
 );
 
 CREATE TABLE Customer (
-    id INT IDENTITY not null,
+    id serial  not null ,
     last_Name VARCHAR(100) NOT NULL,
     first_Name VARCHAR(100),
     email VARCHAR(255),
@@ -37,14 +37,14 @@ CREATE TABLE Customer (
 );
 
 CREATE TABLE Sales_Agent(
-    id INT NOT NULL IDENTITY ,
+    id serial NOT NULL   ,
     agent_Name varchar(255) not null,
     PRIMARY KEY (id)
 );
 
 
 CREATE TABLE Insurer(
-    id int not null identity,
+    id serial not null ,
     company_Name varchar(255) not null,
     primary key(id)
 
@@ -52,7 +52,7 @@ CREATE TABLE Insurer(
 
 
 CREATE TABLE Policy (
-    id INT IDENTITY not null,
+    id serial  not null ,
     customer_id int not null,
     insurer_id int ,
     policy_Number VARCHAR(100) NOT NULL,
@@ -60,8 +60,8 @@ CREATE TABLE Policy (
     cover_Fm_Date DATE NOT NULL,
     cover_To_Date DATE NOT NULL,
     insurance_Company VARCHAR(255) ,
-    premium DOUBLE,
-    amt_paid DOUBLE,
+    premium numeric,
+    amt_paid numeric,
     agent_id int,
     PRIMARY KEY (id),
     constraint policy_customer_fk FOREIGN KEY (customer_id) REFERENCES customer(id),
@@ -72,7 +72,7 @@ CREATE TABLE Policy (
 
 
 create Table Report(
-    id int not null identity,
+    id serial not null  ,
     report_id varchar(50) not null,
     report_description varchar(100) not null,
     PRIMARY KEY (id)
@@ -82,9 +82,9 @@ create Table Report(
 
 
 CREATE TABLE Payment_Details (
-    id INT NOT NULL  IDENTITY ,
+    id serial NOT NULL   ,
     policy_id int not null,
-    amt_Paid double,
+    amt_Paid numeric,
     transaction_Date DATE,
     entry_date date not null,
     comments varchar(100),
@@ -93,7 +93,7 @@ CREATE TABLE Payment_Details (
 );
 
 
-insert into Sales_Agent(id,agent_Name) values (1, 'TEST 1');
+insert into Sales_Agent(id,agent_Name) values (0, 'TEST 1');
 
 insert into Sales_Agent(id,agent_Name) values (2, 'TEST 2');
 
@@ -106,6 +106,6 @@ insert into Insurer(id,company_name) values(3,'DONEWELL INSURANCE');
 insert into Report(id,report_id,report_description) values(1,'test.rptdesign','Test Report');
 
 insert into users (id,username,password,enabled,fullname)
-values (1,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
+values (0,'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
 
-insert into user_roles(id,username,role) values(1,'admin','admin');
+insert into user_roles(id,username,role) values(0,'admin','admin');
