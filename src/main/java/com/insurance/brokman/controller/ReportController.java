@@ -15,6 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+//TODO
+/*
+1. Clients without any policies
+2. Lapsed policies
+3. Policies Due Renewal
+4. Production Report
+5. Lapsed Policies
+6. Policies with outstanding premiums
+7.
+ */
+
 @Controller
 public class ReportController {
 

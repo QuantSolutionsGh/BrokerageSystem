@@ -109,4 +109,6 @@ insert into Report(id,report_id,report_description) values(nextval('report_id_se
 insert into users (id,username,password,enabled,fullname)
 values (nextval('users_id_seq'),'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
 
-insert into user_roles(id,user_id,role) values(nextval('user_roles_id_seq'),CURRVAL('users_id_seq'),'admin');
+insert into user_roles(id,user_id,role) values(nextval('user_roles_id_seq'),CURRVAL('users_id_seq'),'developer');
+
+
