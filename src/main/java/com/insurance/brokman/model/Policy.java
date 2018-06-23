@@ -23,6 +23,8 @@ public class Policy {
 
     private Date coverToDate;
 
+    private Date transactionDate;
+
 
 
     private String insuranceCompany;
@@ -159,5 +161,13 @@ public class Policy {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
     }
 }

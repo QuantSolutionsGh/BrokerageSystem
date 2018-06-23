@@ -195,6 +195,27 @@
 
         <div class="form-row">
 
+            <div class="col-md-4 ">
+                <label for="transactionDate">Transaction Date</label>
+                <div class="form-group   ">
+                    <div class="input-group date " id="datepicker3" data-target-input="#transactionDate">
+
+                        <spring:bind path="transactionDate">
+
+
+                            <input type="text" class="form-control datetimepicker-input"
+                                   data-target="#datepicker3" name="transactionDate" required="required"
+                                   id="transactionDate"
+                                   value="${status.value}"/>
+                            <div class="input-group-append" data-target="#datepicker3" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+
+                        </spring:bind>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
         <br/>
@@ -301,6 +322,12 @@
 
     $(function () {
         $('#datepicker2').datetimepicker({
+            format : 'YYYY-MM-DD'
+        });
+    });
+
+    $(function () {
+        $('#datepicker3').datetimepicker({
             format : 'YYYY-MM-DD'
         });
     });

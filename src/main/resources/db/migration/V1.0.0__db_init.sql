@@ -59,6 +59,7 @@ CREATE TABLE Policy (
     policy_Type VARCHAR(100),
     cover_Fm_Date DATE NOT NULL,
     cover_To_Date DATE NOT NULL,
+    transaction_Date DATE not null,
     insurance_Company VARCHAR(255) ,
     premium numeric,
     currency varchar(10) not null,
@@ -105,6 +106,16 @@ insert into Insurer(id, company_Name) values (nextval('insurer_id_seq'),'ENTERPR
 insert into Insurer(id,company_name) values(nextval('insurer_id_seq'),'DONEWELL INSURANCE');
 
 insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'test.rptdesign','Test Report');
+
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'prospective_clients.rptdesign',
+                                                           'This report lists all clients without any policies recorded.');
+
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'production.rptdesign',
+                                                           'This report shows the production report for a specified period.');
+
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'lapsedpolicies.rptdesign',
+                                                           'This report lists all policies due for renewal within a specified period.');
+
 
 insert into users (id,username,password,enabled,fullname)
 values (nextval('users_id_seq'),'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');

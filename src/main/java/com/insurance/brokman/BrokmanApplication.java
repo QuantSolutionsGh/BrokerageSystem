@@ -45,6 +45,8 @@ public class BrokmanApplication implements CommandLineRunner {
 
 		policy.setCoverFmDate(new Date());
 
+		policy.setTransactionDate(new Date());
+
 		policy.setCoverToDate(new Date());
 
 		policy.setInsuranceCompany("test test");
