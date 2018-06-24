@@ -69,7 +69,7 @@ importPackage(Packages.javax.sql);
 var dataSource = spring.getBean("dataSource");
 var appContext = reportContext.getAppContext();
 appContext.put("OdaJDBCDriverPassInConnection",dataSource.getConnection());
-appContext.put("OdaJDBCDriverPassInConnectionCloseAfterUse",false);
+appContext.put("OdaJDBCDriverPassInConnectionCloseAfterUse",true);
 }]]></method>
     <property name="iconFile">/templates/first_report.gif</property>
     <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.firstreport</property>
@@ -509,9 +509,9 @@ appContext.put("OdaJDBCDriverPassInConnectionCloseAfterUse",false);
                     <property name="nativeDataType">12</property>
                 </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[select * from customer a
+            <xml-property name="queryText"><![CDATA[select * from myapp.customer a
 where not exists
-(select 1 from policy p where p.customer_id=a.id)]]></xml-property>
+(select 1 from myapp.policy p where p.customer_id=a.id)]]></xml-property>
         </oda-data-set>
     </data-sets>
     <styles>

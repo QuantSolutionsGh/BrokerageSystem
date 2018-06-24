@@ -1,8 +1,5 @@
 package com.insurance.brokman;
 
-import com.insurance.brokman.model.Customer;
-import com.insurance.brokman.model.Insurer;
-import com.insurance.brokman.model.Policy;
 import com.insurance.brokman.repository.CustomerRepository;
 import com.insurance.brokman.repository.InsurerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
-
-import java.util.Date;
 
 @SpringBootApplication(exclude = {MongoAutoConfiguration.class})
 /* Because I have included BIRT which has some mongo DB classes, spring boot is automatically configuring MongoDB against
@@ -35,7 +30,7 @@ public class BrokmanApplication implements CommandLineRunner {
 
 
 
-		Customer customer = new Customer();
+		/*Customer customer = new Customer();
 		customer.setLastName("test");
 		customer.setFirstName("test - ttest");
 
@@ -63,7 +58,7 @@ public class BrokmanApplication implements CommandLineRunner {
 		customer.addToPolicyList(policy);
 
 		customerRepo.save(customer);
-
+*/
 
 
 

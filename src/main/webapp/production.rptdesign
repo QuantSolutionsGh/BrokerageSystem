@@ -33,7 +33,7 @@ importPackage(Packages.javax.sql);
 var dataSource = spring.getBean("dataSource");
 var appContext = reportContext.getAppContext();
 appContext.put("OdaJDBCDriverPassInConnection",dataSource.getConnection());
-appContext.put("OdaJDBCDriverPassInConnectionCloseAfterUse",false);
+appContext.put("OdaJDBCDriverPassInConnectionCloseAfterUse",true);
 }]]></method>
     <property name="iconFile">/templates/first_report.gif</property>
     <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.firstreport</property>
@@ -571,12 +571,12 @@ a.policy_type,a.cover_fm_date,a.cover_to_date,a.transaction_date,a.premium,a.cur
 phone,
 a.amt_paid
 
-from policy a 
-left join insurer i
+from myapp.policy a
+left join myapp.insurer i
 on a.insurer_id=i.id
-left join customer c
+left join myapp.customer c
 on c.id=a.customer_id
-left join sales_agent s
+left join myapp.sales_agent s
 on a.agent_id=s.id
 where 
 a.transaction_date between ? and ?]]></xml-property>

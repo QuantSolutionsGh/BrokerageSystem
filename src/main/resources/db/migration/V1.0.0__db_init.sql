@@ -64,6 +64,7 @@ CREATE TABLE Policy (
     premium numeric,
     currency varchar(10) not null,
     amt_paid numeric,
+    commission_rate numeric,
     agent_id int,
     PRIMARY KEY (id),
     constraint policy_customer_fk FOREIGN KEY (customer_id) REFERENCES customer(id),

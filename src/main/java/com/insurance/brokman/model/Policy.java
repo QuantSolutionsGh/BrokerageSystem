@@ -33,6 +33,8 @@ public class Policy {
 
     private long amtPaid;
 
+    private long commissionRate;
+
     private String currency;
 
 
@@ -169,5 +171,13 @@ public class Policy {
 
     public void setTransactionDate(Date transactionDate) {
         this.transactionDate = transactionDate;
+    }
+
+    public long getCommissionRate() {
+        return commissionRate;
+    }
+
+    public void setCommissionRate(long commissionRate) {
+        this.commissionRate = commissionRate;
     }
 }
