@@ -24,9 +24,10 @@
 <!--https://www.jqueryscript.net/table/jQuery-Table-Pagination-For-Materialize.html -->
     <!--https://codepen.io/azamatms/pen/ZGwOMM    -->
     <div class="row">
+        <br/>
 
             <h4>&nbsp &nbsp</h4>
-            <i class="fa fa-users fa-2x" style="color:goldenrod"></i>
+            <i class="fa fa-id-card fa-2x" style="color:goldenrod"></i>
             <h4>&nbsp Policies</h4>
 
 
@@ -68,7 +69,7 @@
             <c:forEach var="policy" items="${policyList}">
                 <tr>
                     <td>${policy.policyNumber}</td>
-                    <td>${policy.policyType}</td>
+                    <td>${policy.product.name}</td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd" value="${policy.coverFmDate}"/></td>
                     <td><fmt:formatDate pattern="yyyy-MM-dd" value="${policy.coverToDate}"/></td>
                     <td>${policy.insurer.companyName}</td>

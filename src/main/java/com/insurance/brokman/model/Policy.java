@@ -29,13 +29,17 @@ public class Policy {
 
     private String insuranceCompany;
 
-    private long premium;
+    private double premium;
 
-    private long amtPaid;
+    private double amtPaid;
 
-    private long commissionRate;
+    private double commissionRate;
 
     private String currency;
+
+    @ManyToOne
+    @JoinColumn(name="productId")
+    private Product product;
 
 
     @ManyToOne
@@ -116,11 +120,11 @@ public class Policy {
         this.insuranceCompany = insuranceCompany;
     }
 
-    public long getPremium() {
+    public double getPremium() {
         return premium;
     }
 
-    public void setPremium(long premium) {
+    public void setPremium(double premium) {
         this.premium = premium;
     }
 
@@ -141,11 +145,11 @@ public class Policy {
 
     }
 
-    public long getAmtPaid() {
+    public double getAmtPaid() {
         return amtPaid;
     }
 
-    public void setAmtPaid(long amtPaid) {
+    public void setAmtPaid(double amtPaid) {
         this.amtPaid = amtPaid;
     }
 
@@ -173,11 +177,19 @@ public class Policy {
         this.transactionDate = transactionDate;
     }
 
-    public long getCommissionRate() {
+    public double getCommissionRate() {
         return commissionRate;
     }
 
-    public void setCommissionRate(long commissionRate) {
+    public void setCommissionRate(double commissionRate) {
         this.commissionRate = commissionRate;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

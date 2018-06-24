@@ -23,14 +23,7 @@
                             </c:when>
                             <c:otherwise>
                                 <h3>Update Sales Agent </h3>
-                                <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                    Show Policy Details
-                                </a>
 
-
-
-
-                                <br/>
                             </c:otherwise>
                         </c:choose>
                         <br />
@@ -53,8 +46,8 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-success">Save</button>
-            <button type="submit" class="btn btn-primary">Cancel </button>
+                        <button type="submit" class="btn btn-warning">Save</button>
+            <button type="submit" class="btn btn-danger">Cancel </button>
 
 
 

@@ -60,12 +60,17 @@
 
             <div class="form-group col-md-4 offset-md-1">
 
-                <spring:bind path="policyType">
-                    <label for="policyType">Policy Type</label>
-                    <input type="text" class="form-control" name="policyType" required="required"
-                           id="policyType"
-                           value="${status.value}"/>
-                </spring:bind>
+                <label >Product</label>
+                <form:select class="form-control" path="product">
+
+                    <%--@elvariable id="productList" type="java.util.List<com.insurance.brokman.model.Product>"--%>
+                    <c:forEach var="product" items="${productList}">
+                        <form:option value="${product}" label="${product.name}" />
+
+                    </c:forEach>
+
+
+                </form:select>
             </div>
         </div>
 
@@ -186,7 +191,7 @@
             <div class="form-group col-md-2 ">
                 <spring:bind path="premium">
                     <label for="premium">Premium</label>
-                    <input type="number" class="form-control" name="premium" required="required"
+                    <input type="text" class="form-control" name="premium" required="required"
                            id="premium"
                            value="${status.value}"/>
                 </spring:bind>
@@ -216,13 +221,23 @@
                 </div>
             </div>
 
+            <div class="form-group col-md-4 offset-md-1">
+
+                <spring:bind path="commissionRate">
+                    <label for="commissionRate">Commission Rate</label>
+                    <input type="text" class="form-control" name="commissionRate" required="required"
+                           id="commissionRate"
+                           value="${status.value}"/>
+                </spring:bind>
+            </div>
+
 
         </div>
         <br/>
 
 
-        <button type="submit" class="btn btn-success">Save</button>
-        <button type="submit" class="btn btn-primary">Cancel</button>
+        <button type="submit" class="btn btn-warning">Save</button>
+        <button type="submit" class="btn btn-danger">Cancel</button>
 
 
         <br/>

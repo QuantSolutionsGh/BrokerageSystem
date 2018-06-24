@@ -78,8 +78,8 @@
 
 
 
-                        <button type="submit" class="btn btn-success">Save</button>
-            <button type="submit" class="btn btn-primary">Cancel </button>
+                        <button type="submit" class="btn btn-warning">Save</button>
+            <button type="submit" class="btn btn-danger">Cancel </button>
 
 
 

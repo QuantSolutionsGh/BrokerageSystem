@@ -1,14 +1,8 @@
 package com.insurance.brokman.controller;
 
 
-import com.insurance.brokman.model.Customer;
-import com.insurance.brokman.model.Insurer;
-import com.insurance.brokman.model.Policy;
-import com.insurance.brokman.model.SalesAgent;
-import com.insurance.brokman.repository.CustomerRepository;
-import com.insurance.brokman.repository.InsurerRepository;
-import com.insurance.brokman.repository.PolicyRepository;
-import com.insurance.brokman.repository.SalesAgentRepository;
+import com.insurance.brokman.model.*;
+import com.insurance.brokman.repository.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +29,9 @@ public class PolicyController {
 
     @Autowired
     private InsurerRepository insurerRepo;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @Autowired
     private SalesAgentRepository salesAgentRepo;
@@ -81,6 +78,13 @@ public class PolicyController {
         return (ArrayList<Customer>) customerRepo.findAll();
 
     }
+
+
+    @ModelAttribute("productList")
+    public ArrayList<Product>populateProductList(){
+        return (ArrayList<Product>)productRepository.findAll();
+    }
+
 
 
     @ModelAttribute("insurerList")

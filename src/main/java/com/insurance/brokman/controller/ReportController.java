@@ -23,7 +23,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 4. Production Report
 5. Lapsed Policies
 6. Policies with outstanding premiums
-7.
+7. Commission Statement - Based on receipts
+8. Commission Payable - Based on production
  */
 
 @Controller

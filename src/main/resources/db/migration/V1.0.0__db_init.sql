@@ -50,6 +50,13 @@ CREATE TABLE Insurer(
 
 );
 
+create Table Product(
+    id serial not null,
+    name varchar(50) not null,
+    primary key (id)
+
+);
+
 
 CREATE TABLE Policy (
     id serial  not null ,
@@ -66,10 +73,12 @@ CREATE TABLE Policy (
     amt_paid numeric,
     commission_rate numeric,
     agent_id int,
+    product_id int,
     PRIMARY KEY (id),
     constraint policy_customer_fk FOREIGN KEY (customer_id) REFERENCES customer(id),
     constraint policy_sales_agent_fk FOREIGN KEY (agent_id) references Sales_Agent(id),
-    constraint policy_insurer_fk foreign key (insurer_id) references Insurer(id)
+    constraint policy_insurer_fk foreign key (insurer_id) references Insurer(id),
+    constraint policy_product_fk FOREIGN KEY (product_id) REFERENCES Product(id)
 
 );
 
@@ -96,6 +105,8 @@ CREATE TABLE Payment_Details (
 );
 
 
+
+
 insert into Sales_Agent(id,agent_Name) values (nextval('sales_agent_id_seq'), 'TEST 1');
 
 insert into Sales_Agent(id,agent_Name) values (nextval('sales_agent_id_seq'), 'TEST 2');
@@ -105,8 +116,6 @@ insert into Insurer(id,company_Name) values (nextval('insurer_id_seq'),'HOLLARD 
 insert into Insurer(id, company_Name) values (nextval('insurer_id_seq'),'ENTERPRISE INSURANCE');
 
 insert into Insurer(id,company_name) values(nextval('insurer_id_seq'),'DONEWELL INSURANCE');
-
-insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'test.rptdesign','Test Report');
 
 insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'prospective_clients.rptdesign',
                                                            'This report lists all clients without any policies recorded.');
@@ -121,6 +130,32 @@ insert into Report(id,report_id,report_description) values(nextval('report_id_se
 insert into users (id,username,password,enabled,fullname)
 values (nextval('users_id_seq'),'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
 
+
+
 insert into user_roles(id,user_id,role) values(nextval('user_roles_id_seq'),CURRVAL('users_id_seq'),'developer');
+
+insert into users (id,username,password,enabled,fullname)
+values (nextval('users_id_seq'),'albert','$2a$10$7JTVlDqJXnWoalwC1dP7E.AtVYvLV/Ur3YzptrfrnubKFGg5T3JY6',1,'albert');
+
+insert into user_roles(id,user_id,role) values(nextval('user_roles_id_seq'),CURRVAL('users_id_seq'),'developer');
+
+
+insert into Product(id,name) values(nextval('product_id_seq'),'FIRE');
+
+insert into Product(id,name) values(nextval('product_id_seq'),'MOTOR');
+
+insert into Product(id,name) values(nextval('product_id_seq'),'MARINE');
+
+insert into Product(id,name) values(nextval('product_id_seq'),'ENGINEERING');
+
+insert into Product(id,name) values(nextval('product_id_seq'),'GENERAL ACCIDENT');
+
+insert into Product(id,name) values(nextval('product_id_seq'),'BONDS');
+
+insert into Product(id,name) values(nextval('product_id_seq'),'OTHERS');
+
+
+
+
 
 

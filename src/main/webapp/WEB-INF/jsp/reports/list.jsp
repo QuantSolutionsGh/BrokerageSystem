@@ -24,9 +24,10 @@
 <!--https://www.jqueryscript.net/table/jQuery-Table-Pagination-For-Materialize.html -->
     <!--https://codepen.io/azamatms/pen/ZGwOMM    -->
     <div class="row">
+        <br/>
 
             <h4>&nbsp &nbsp</h4>
-            <i class="fa fa-users fa-2x" style="color:goldenrod"></i>
+            <i class="fa fa-bar-chart fa-2x" style="color:goldenrod"></i>
             <h4>&nbsp Reports</h4>
 
 

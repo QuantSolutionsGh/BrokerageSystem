@@ -138,7 +138,12 @@
                    aria-haspopup="true" aria-expanded="false">System Configuration</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="${urlHome}insurers/">System Configuration</a>
-                    <a class="dropdown-item" href="${urlHome}users/">User List</a>
+
+                    <sec:authorize access="hasAuthority('developer')">
+
+                        <a class="dropdown-item" href="${urlHome}users/">User List</a>
+
+                    </sec:authorize>
 
                 </div>
             </li>

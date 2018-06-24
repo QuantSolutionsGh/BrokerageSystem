@@ -57,7 +57,7 @@
 
                 <spring:bind path="amtPaid">
                     <label for="amtPaid">Amount</label>
-                    <input type="number" class="form-control" name="amtPaid" required="required"
+                    <input type="text" class="form-control" name="amtPaid" required="required"
                            id="amtPaid"
                            value="${status.value}"/>
                 </spring:bind>
@@ -82,8 +82,8 @@
 
 
 
-        <button type="submit" class="btn btn-success">Save</button>
-        <button type="submit" class="btn btn-primary">Cancel</button>
+        <button type="submit" class="btn btn-warning">Save</button>
+        <button type="submit" class="btn btn-danger">Cancel</button>
 
 
 

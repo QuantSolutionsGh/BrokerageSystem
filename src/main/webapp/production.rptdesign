@@ -567,7 +567,7 @@ appContext.put("OdaJDBCDriverPassInConnectionCloseAfterUse",true);
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select a.id,a.policy_number,concat(c.last_name ,' ', c.first_name ,' ' ,c.other_names) fullname,
-a.policy_type,a.cover_fm_date,a.cover_to_date,a.transaction_date,a.premium,a.currency,company_name,agent_name,
+z.name policy_type,a.cover_fm_date,a.cover_to_date,a.transaction_date,a.premium,a.currency,company_name,agent_name,
 phone,
 a.amt_paid
 
@@ -578,6 +578,8 @@ left join myapp.customer c
 on c.id=a.customer_id
 left join myapp.sales_agent s
 on a.agent_id=s.id
+left join myapp.product z
+on z.id=a.product_id
 where 
 a.transaction_date between ? and ?]]></xml-property>
         </oda-data-set>

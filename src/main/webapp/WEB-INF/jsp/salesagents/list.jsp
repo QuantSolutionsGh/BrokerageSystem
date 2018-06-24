@@ -26,7 +26,7 @@
     <div class="row">
 
             <h4>&nbsp &nbsp</h4>
-            <i class="fa fa-users fa-2x" style="color:goldenrod"></i>
+            <i class="fa fa-user-circle fa-2x" style="color:goldenrod"></i>
             <h4>&nbsp Sales Agents</h4>
 
 

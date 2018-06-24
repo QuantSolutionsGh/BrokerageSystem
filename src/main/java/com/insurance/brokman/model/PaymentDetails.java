@@ -16,7 +16,7 @@ public class PaymentDetails {
     private Policy policy;
 
 
-    private long amtPaid;
+    private double amtPaid;
 
     private Date entryDate;
 
@@ -43,11 +43,11 @@ public class PaymentDetails {
 
 
 
-    public long getAmtPaid() {
+    public double getAmtPaid() {
         return amtPaid;
     }
 
-    public void setAmtPaid(long amtPaid) {
+    public void setAmtPaid(double amtPaid) {
         this.amtPaid = amtPaid;
     }
 
