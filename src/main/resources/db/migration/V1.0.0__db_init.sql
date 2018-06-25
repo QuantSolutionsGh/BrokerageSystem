@@ -126,6 +126,16 @@ insert into Report(id,report_id,report_description) values(nextval('report_id_se
 insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'lapsedpolicies.rptdesign',
                                                            'This report lists all policies due for renewal within a specified period.');
 
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'commission_payable.rptdesign',
+                                                           'This report lists commission payable for agents within a specified period. Calculation is based on premium production');
+
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'commission_receipts.rptdesign',
+                                                           'This report lists commission for agents within a specified period. Calculation is based on premium receipts');
+
+insert into Report(id,report_id,report_description) values(nextval('report_id_seq'),'analysis_box.rptdesign',
+                                                           'TODO - production by product, by insurer, by agents, policies per intermediary etc ');
+
+
 
 insert into users (id,username,password,enabled,fullname)
 values (nextval('users_id_seq'),'admin','$2a$10$E3mPTZb50e7sSW15fDx8Ne7hDZpfDjrmMPTTUp8wVjLTu.G5oPYCO',1,'administrator');
