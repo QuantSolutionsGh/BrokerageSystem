@@ -40,6 +40,13 @@ public class SalesAgentController {
 
     }
 
+    @RequestMapping(value="/salesagents/salesagentform/cancel",method=RequestMethod.GET)
+    public String custFormCancel(){
+        logger.debug("salesAgentFormCancel");
+        return "redirect:/salesagents";
+
+    }
+
     //show add salesagent form
 
     @RequestMapping(value = "/salesagents/add", method = RequestMethod.GET)

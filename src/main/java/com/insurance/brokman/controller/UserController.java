@@ -75,6 +75,13 @@ public class UserController {
     }
 
 
+    @RequestMapping(value="/users/userform/cancel",method=RequestMethod.GET)
+    public String custFormCancel(){
+        logger.debug("userformcancel()");
+        return "redirect:/users";
+
+    }
+
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public String saveOrUpdateAgent(@ModelAttribute("userForm") @Validated Users user,
                                     BindingResult result, Model model, final RedirectAttributes redirectAttributes){

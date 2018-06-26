@@ -13,6 +13,7 @@
 <div class="container-fluid" style="margin-top: 70px">
     <spring:url value="/policies" var="policyActionUrl"></spring:url>
     <spring:url value="/payments/makepayment" var="paymentsActionUrl"></spring:url>
+    <spring:url value="/policies/policyform/cancel" var="cancelUrl"></spring:url>
 
     <c:if test="${not empty msg}">
         <div class="alert alert-${css} alert-dismissible" role="alert">
@@ -237,7 +238,7 @@
 
 
         <button type="submit" class="btn btn-warning">Save</button>
-        <button type="submit" class="btn btn-danger">Cancel</button>
+        <a class="btn btn-danger" href="${cancelUrl}">Cancel</a>
 
 
         <br/>

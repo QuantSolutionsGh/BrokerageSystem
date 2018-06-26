@@ -86,7 +86,7 @@ CREATE TABLE Policy (
 create Table Report(
     id serial not null  ,
     report_id varchar(50) not null,
-    report_description varchar(100) not null,
+    report_description varchar(300) not null,
     PRIMARY KEY (id)
 
 );

@@ -12,6 +12,7 @@
 
     <div class="container-fluid" style="margin-top: 70px">
         <spring:url value="/customers" var="custActionUrl" ></spring:url>
+        <spring:url value="/customers/custform/cancel" var="cancelUrl"></spring:url>
 
 
 
@@ -106,7 +107,8 @@
                         </div>
 
                         <button type="submit" class="btn btn-warning">Save</button>
-            <button type="submit" class="btn btn-danger">Cancel </button>
+
+                         <a class="btn btn-danger" href="${cancelUrl}">Cancel</a>
 
 
 

@@ -59,6 +59,13 @@ public class InsurerController {
 
     }
 
+    @RequestMapping(value="/insurers/insurerform/cancel",method=RequestMethod.GET)
+    public String custFormCancel(){
+        logger.debug("inurerFormCancel");
+        return "redirect:/insurers";
+
+    }
+
 
     @RequestMapping(value="/insurers",method= RequestMethod.GET)
     public String showAllInsurers(Model model){

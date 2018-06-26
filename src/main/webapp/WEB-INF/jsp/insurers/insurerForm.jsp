@@ -12,6 +12,7 @@
 
     <div class="container-fluid" style="margin-top: 70px">
         <spring:url value="/insurers" var="insurersUrl" ></spring:url>
+        <spring:url value="/insurers/insurerform/cancel" var="cancelUrl"></spring:url>
 
 
 
@@ -50,7 +51,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-warning">Save</button>
-            <button type="submit" class="btn btn-danger">Cancel </button>
+                        <a class="btn btn-danger" href="${cancelUrl}">Cancel</a>
 
 
 

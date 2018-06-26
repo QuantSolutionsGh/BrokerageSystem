@@ -75,6 +75,13 @@ public class CustomerController {
 
     }
 
+    @RequestMapping(value="/customers/custform/cancel",method=RequestMethod.GET)
+    public String custFormCancel(){
+        logger.debug("custFormCancel");
+        return "redirect:/customers";
+
+    }
+
 
     // show update form
 
@@ -92,6 +99,8 @@ public class CustomerController {
 
 
     }
+
+
 
 
 

@@ -71,6 +71,13 @@ public class PolicyController {
 
     }
 
+    @RequestMapping(value="/policies/policyform/cancel",method=RequestMethod.GET)
+    public String custFormCancel(){
+        logger.debug("policyFormCancel");
+        return "redirect:/policies";
+
+    }
+
 
     @ModelAttribute("customerList")
     public ArrayList<Customer> populateCustomerList(){

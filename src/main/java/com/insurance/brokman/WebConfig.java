@@ -16,6 +16,7 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -47,6 +48,18 @@ public class WebConfig  extends SpringBootServletInitializer implements WebMvcCo
         resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");
         return resolver;
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+            registry.addResourceHandler("/webjars/**")
+                    .addResourceLocations("/webjars/")
+                    .setCachePeriod(31556926);
+
+
+
+
+
     }
 
     @Override
