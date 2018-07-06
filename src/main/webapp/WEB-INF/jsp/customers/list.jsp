@@ -6,7 +6,10 @@
 <html lang="en">
 
 <jsp:include page="../header.jsp" />
-<body>
+
+<body >
+
+
 
 <div class="container-fluid" style="margin-top: 70px">
     <c:if test="${not empty msg}">
@@ -43,17 +46,20 @@
 
 
 
-    <div class="table-responsive" id="all-events">
-        <table id="jtable" class="table  table-hover table-sm"
-               width="100%">
+    <div  id="all-events">
+        <table id="jtable" class="table table-bordered table-hover footable "
+               >
             <thead style="background-color: #fde89f;">
             <tr>
-                <th width="20%">Last Name</th>
-                <th width="20%">First Name</th>
-                <th width="20%">Other Names</th>
-                <th width="20%">Email</th>
-                <th width="10%">Phone #</th>
-                <th>Action</th>
+
+                <th data-class="expand"  data-hide="default" >Fullname</th>
+                <th data-hide="phone" >Last Name</th>
+                <th data-hide="phone">First Name</th>
+                <th data-hide="phone,tablet">Other Names</th>
+
+                <th data-hide="phone,tablet">Email</th>
+                <th data-hide="phone" >Phone #</th>
+                <th data-hide="phone,tablet">Action</th>
 
             </tr>
             </thead>
@@ -63,7 +69,8 @@
 
 
             <c:forEach var="customer" items="${customers}">
-                <tr>
+                <tr  >
+                    <td>${customer.lastName} - ${customer.firstName}</td>
                     <td>${customer.lastName}</td>
                     <td>${customer.firstName}</td>
                     <td>${customer.otherNames}</td>
@@ -134,34 +141,28 @@
         document.body.appendChild(form);
         form.submit();
     }
-    $(document).ready(function() {
-        $('.table').DataTable({
-            responsive : true,
-            searching : false,
-            ordering : true,
-            "bLengthChange" : false,
-            "oLanguage": {
-                "sStripClasses": "",
-                "sSearch": "",
-                "sSearchPlaceholder": "Enter Keywords Here",
-                "sInfo": "_START_ -_END_ of _TOTAL_",
-                "sLengthMenu": '<span>Rows per page:</span><select class="browser-default">' +
-                '<option value="10">10</option>' +
-                '<option value="20">20</option>' +
-                '<option value="30">30</option>' +
-                '<option value="40">40</option>' +
-                '<option value="50">50</option>' +
-                '<option value="-1">All</option>' +
-                '</select></div>'
-            },
-            bAutoWidth: false,
-            paging : true,
-            bInfo : false,
-            "iDisplayLength" : 5,
-            "aLengthMenu" : [ [ 5, 10, 15, -1 ], [ 5, 10, 15, "All" ] ]
-        });
-    });
+
 </script>
+
+
+
+
+
+<script  >
+
+    $(document).ready(
+
+        function() {
+        $('.footable').footable({
+            calculateWidthOverride: function() {
+                return { width: $(window).width() };
+            }
+        });
+    }
+    );
+</script>
+
+
 
 
 </body>

@@ -10,6 +10,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <spring:url value="/webjars/bootstrap/4.0.0/css/bootstrap.css" var="bootstrapCss" />
+    <spring:url value="/webjars/footable/2.0.3" var="footable" />
+
         <spring:url
                 value="/webjars/tempusdominus-bootstrap-4/5.0.0-alpha.16/build" var="dateComponent" />
 
@@ -19,13 +21,14 @@
         <spring:url value="/webjars/bootstrap/4.0.0/js/bootstrap.js" var="bootstrapJs"/>
         <spring:url value="/webjars/jquery/1.9.1/jquery.min.js" var="jqueryJs"/>
         <spring:url value="/webjars/datatables/1.10.15/js/jquery.dataTables.min.js" var="dataTablesJS" />
-        <spring:url value="/webjars/datatables/1.10.15/js/dataTables.bootstrap4.min.js" var="dataTablesbootstrap4minJS" />
-        <spring:url value="/webjars/datatables-responsive/1.0.6/js/dataTables.responsive.js" var="dataTablesRespJS" />
+
+
         <spring:url value="/webjars/font-awesome/4.7.0/css/font-awesome.min.css"  var="fontAwesome"/>
         <spring:url value="/webjars/momentjs/2.22.1/min/moment.min.js" var="momentjs" />
 
 
         <link href="${bootstrapCss}"  rel="stylesheet" />
+    <link href="${footable}/css/footable.core.css" rel="stylesheet"/>
         <link href="${bootstrapDialogCss}"  rel="stylesheet" />
         <link href="${dataTablesCss}" rel="stylesheet" />
         <link href="${dataTablesResponsiveCss}" rel="stylesheet" />
@@ -33,13 +36,37 @@
 
         <link href="${dateComponent}/css/tempusdominus-bootstrap-4.css" rel="stylesheet" />
 
+    <style>
+        h2 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        table caption {
+            padding: .5em 0;
+        }
+
+        .p {
+            text-align: center;
+            padding-top: 140px;
+            font-size: 5px;
+        }
+
+    </style>
+
         <script src="${jqueryJs}"></script>
+    <script src="${footable}/js/footable.js"></script>
         <script src="${bootstrapJs}"></script>
         <script src="${dataTablesJS}"></script>
         <script src="${dataTablesbootstrap4minJS}"></script>
         <script src="${dataTablesRespJS}"></script>
         <script src="${momentjs}"></script>
         <script src="${dateComponent}/js/tempusdominus-bootstrap-4.js"></script>
+
+
+
+
+
 
 
 
